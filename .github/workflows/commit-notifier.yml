@@ -16,4 +16,6 @@ jobs:
         if: always()
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD }}
+        with:
           title: "New commit on fronted"
+          color: 0xfff44f

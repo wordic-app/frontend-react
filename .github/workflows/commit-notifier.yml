@@ -1,7 +1,9 @@
 name: Discord Commit Notifier
 
 on:
-  commit_comment:
+  push:
+    branches-ignore: 
+      - 'main'
     
 
   workflow_dispatch:

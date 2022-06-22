@@ -1,0 +1,41 @@
+name: Delpoy (Digital Ocean)
+
+on:
+  push:
+    branches: [ "develop" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.FRONTEND_IP }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            mkdir -p wordic-frontend-repo
+            cd wordic-frontend-repo
+            rm -rf *
+            git clone https://github.com/wordic-app/frontend-react.git
+            git checkout develop
+            docker run --rm -v ${PWD}/frontend-react:/wordic -w /wordic node:16-slim npm ci
+            docker run --rm -v ${PWD}/frontend-react:/wordic -w /wordic node:16-slim npm run build
+#           cp -r ${PWD}/react-frontend/build/* /root/wordic-configuration/data
+            
+
+      # Runs a set of commands using the runners shell
+      - name: discord
+        uses: sarisia/actions-status-discord@v1
+        if: always()
+        with:
+          webhook: ${{ secrets.DISCORD }}
+          title: "New version of `Wordic` frontend deployed"
+          nodetail: true

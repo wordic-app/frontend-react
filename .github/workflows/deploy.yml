@@ -34,7 +34,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: discord succes
         uses: sarisia/actions-status-discord@v1
-        if: job.status().success()
+        if: job.status()success()
         with:
           webhook: ${{ secrets.DISCORD }}
           title: "New version of `Wordic` frontend deployed"
@@ -42,7 +42,7 @@ jobs:
        
       - name: discord failure
         uses: sarisia/actions-status-discord@v1
-        if: job.status().failure()
+        if: job.status()failure()
         with:
           webhook: ${{ secrets.DISCORD }}
           title: "FAILURE with `Wordic` frontend deploying"

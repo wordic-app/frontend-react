@@ -3,8 +3,8 @@ import Button from 'components/atoms/Button';
 
 const App = () => (
   <div>
-    <Button/>
+    <Button />
   </div>
-)
+);
 
 export default App;

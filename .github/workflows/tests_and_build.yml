@@ -5,7 +5,6 @@ name: Tests & Build
 
 on:
   push:
-    branches: [ "develop" ]
     branches-ignore: ["main"]
   pull_request:
     branches: [ "develop" ]

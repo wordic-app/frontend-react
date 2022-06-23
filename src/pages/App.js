@@ -19,7 +19,7 @@ const App = () => {
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <div>
-        <Button onClick={() => setDarkMode(!darkMode)} />
+        <Button onClick={() => setDarkMode(!darkMode)}>MODE</Button>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
           consectetur dignissimos ex fuga maiores nesciunt soluta totam

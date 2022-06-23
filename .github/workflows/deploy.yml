@@ -24,8 +24,7 @@ jobs:
             mkdir -p wordic-frontend-repo
             cd wordic-frontend-repo
             rm -rf *
-            git clone https://github.com/wordic-app/frontend-react.git
-            git checkout develop
+            git clone -b develop https://github.com/wordic-app/frontend-react.git
             docker run --rm -v ${PWD}/frontend-react:/wordic -w /wordic node:16-slim npm ci
             docker run --rm -v ${PWD}/frontend-react:/wordic -w /wordic node:16-slim npm run build
             cp -r ${PWD}/frontend-react/build/* /root/wordic-configuration/data

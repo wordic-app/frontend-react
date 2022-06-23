@@ -1,7 +1,7 @@
 name: Discord Commit Notifier
 
 on:
-  push:
+  pull_request:
     branches-ignore: 
       - 'main'
     
@@ -15,5 +15,5 @@ jobs:
         if: always()
         with:
           webhook: ${{ secrets.DISCORD }}
-          title: "New commit on fronted"
+          title: "New `pull request` on fronted"
           color: 0x213ac4

@@ -71,6 +71,7 @@
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "2.7.1",
+    "storybook-addon-styled-component-theme": "^2.0.0",
     "webpack": "^5.73.0"
   }
 }

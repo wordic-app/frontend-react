@@ -1,7 +1,7 @@
 # Wordic - frontend
 
-[![Tests & Build](https://github.com/wordic-app/frontend-react/actions/workflows/tests_and_build.yml/badge.svg)](https://github.com/wordic-app/frontend-react/actions/workflows/tests_and_build.yml)
-[![Delpoy (Digital Ocean)](https://github.com/wordic-app/frontend-react/actions/workflows/deploy.yml/badge.svg)](https://github.com/wordic-app/frontend-react/actions/workflows/deploy.yml)
+[![Tests & Build](https://github.com/wordic-app/frontend-react/actions/workflows/tests_and_build.yml/badge.svg?branch=develop)](https://github.com/wordic-app/frontend-react/actions/workflows/tests_and_build.yml)
+[![Delpoy (Digital Ocean)](https://github.com/wordic-app/frontend-react/actions/workflows/deploy.yml/badge.svg?branch=develop)](https://github.com/wordic-app/frontend-react/actions/workflows/deploy.yml)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/wordic-app/frontend-react?style=plastic)
 

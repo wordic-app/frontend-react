@@ -1,10 +1,24 @@
 import React from 'react';
-import Button from 'components/atoms/Button';
+import Button from 'components/atoms/Button/Button';
 import { FaFacebook } from 'react-icons/fa';
 
 export default {
   title: 'Atoms/Button',
   component: Button,
+  argTypes: {
+    color: {
+      control: 'inline-radio',
+    },
+    variant: {
+      control: 'inline-radio',
+    },
+    size: {
+      control: 'inline-radio',
+    },
+    Icon: {
+      control: 'hidden',
+    },
+  },
 };
 
 const Template = (args) => <Button {...args} />;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from 'components/atoms/Button';
+import Button from 'components/atoms/Button/Button';
 import GlobalStyles from 'theme/GlobalStyles';
 import lightTheme from 'theme/lightTheme';
 import darkTheme from 'theme/darkTheme';
@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 import MainPage from 'pages/MainPage';
 import NotFoundPage from 'pages/NotFoundPage';
+import Typography from 'components/atoms/Typography/Typography';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -20,12 +21,22 @@ const App = () => {
       </Routes>
       <div>
         <Button onClick={() => setDarkMode(!darkMode)}>MODE</Button>
-        <p>
+        <Typography>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
           consectetur dignissimos ex fuga maiores nesciunt soluta totam
           voluptates. Accusantium architecto ducimus earum facere facilis iure
           maxime molestiae, officiis voluptas voluptates.
-        </p>
+        </Typography>
+        <Button color='warning'>TEST</Button>
+        <Typography variant='h1'>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
+          consectetur dignissimos ex fuga maiores nesciunt soluta totam
+          voluptates. Accusantium architecto ducimus earum facere facilis iure
+          maxime molestiae, officiis voluptas voluptates.
+        </Typography>
+        <Button color='info' variant='outlined'>
+          INFO
+        </Button>
       </div>
     </ThemeProvider>
   );

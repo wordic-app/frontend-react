@@ -15,7 +15,7 @@ export const parameters = {
   },
 }
 
-const themes = [lightTheme, darkTheme];
+const themes = [darkTheme, lightTheme];
 
 addDecorator(withThemesProvider(themes, ThemeProvider));
 addDecorator(s => <><GlobalStyles theme={darkTheme}/>{s()}</>);

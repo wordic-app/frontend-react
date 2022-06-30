@@ -5,9 +5,8 @@ import lightTheme from 'theme/lightTheme';
 import darkTheme from 'theme/darkTheme';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
-import MainPage from 'pages/MainPage';
-import NotFoundPage from 'pages/NotFoundPage';
-import Typography from 'components/atoms/Typography/Typography';
+import MainPage from 'pages/MainPage/MainPage';
+import NotFoundPage from 'pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -20,22 +19,11 @@ const App = () => {
         <Route path='*' element={<NotFoundPage />} />
       </Routes>
       <div>
-        <Button onClick={() => setDarkMode(!darkMode)}>MODE</Button>
-        <Typography>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-          consectetur dignissimos ex fuga maiores nesciunt soluta totam
-          voluptates. Accusantium architecto ducimus earum facere facilis iure
-          maxime molestiae, officiis voluptas voluptates.
-        </Typography>
-        <Button color='warning'>TEST</Button>
-        <Typography variant='h1'>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam
-          consectetur dignissimos ex fuga maiores nesciunt soluta totam
-          voluptates. Accusantium architecto ducimus earum facere facilis iure
-          maxime molestiae, officiis voluptas voluptates.
-        </Typography>
-        <Button color='info' variant='outlined'>
-          INFO
+        <Button
+          style={{ display: 'none !important' }}
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          MODE
         </Button>
       </div>
     </ThemeProvider>

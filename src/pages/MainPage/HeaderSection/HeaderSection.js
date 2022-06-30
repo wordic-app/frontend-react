@@ -5,7 +5,8 @@ import { ReactComponent as WordicLogo } from 'assets/logo.svg';
 const links = ['home', 'features', 'pricing', 'contact'];
 
 const Container = styled.header`
-  width: 1440px;
+  max-width: 1440px;
+  height: 80px;
   margin: 0 auto;
   padding: 24px 80px;
   display: flex;
@@ -13,7 +14,9 @@ const Container = styled.header`
   justify-content: space-between;
 `;
 
-const Logo = styled.div``;
+const Logo = styled.div`
+  height: 40px;
+`;
 
 const HeaderLink = styled.li`
   list-style: none;
@@ -41,12 +44,14 @@ const GoButton = styled.button`
 
   color: white;
   background-color: #6343d8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 `;
 
-const Header = () => (
+const HeaderSection = () => (
   <Container>
     <Logo>
-      <WordicLogo />
+      <WordicLogo height='40px' />
     </Logo>
     <nav>
       <ul>
@@ -66,4 +71,4 @@ const Header = () => (
   </Container>
 );
 
-export default Header;
+export default HeaderSection;

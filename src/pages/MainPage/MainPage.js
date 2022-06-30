@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from 'pages/MainPage/Header/Header';
+import Header from 'pages/MainPage/HeaderSection/HeaderSection';
 
 const Container = styled.div`
   width: 100%;

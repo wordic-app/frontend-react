@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ReactComponent as WordicLogo } from 'assets/logo.svg';
-
-const links = ['home', 'features', 'pricing', 'contact'];
+import PropTypes from 'prop-types';
+import HeaderButton from 'pages/MainPage/HeaderSection/HeaderButton';
+import HeaderLink from 'pages/MainPage/HeaderSection/HeaderLink';
 
 const Container = styled.header`
   max-width: 1440px;
@@ -12,63 +13,39 @@ const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1000px) {
+    padding: 16px 0;
+  }
 `;
 
 const Logo = styled.div`
   height: 40px;
 `;
 
-const HeaderLink = styled.li`
-  list-style: none;
-  display: inline-block;
-  padding: 16px 24px;
-
-  & > a {
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      color: #edcc07;
-    }
-  }
-`;
-
 const ButtonBox = styled.div``;
 
-const GoButton = styled.button`
-  margin: 0 12px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-
-  color: white;
-  background-color: #6343d8;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-`;
-
-const HeaderSection = () => (
+const HeaderSection = ({ sections }) => (
   <Container>
     <Logo>
       <WordicLogo height='40px' />
     </Logo>
     <nav>
       <ul>
-        {links.map((link) => (
-          <HeaderLink key={link}>
-            <a href={`#${link}`} aria-label={link}>
-              {link}
-            </a>
-          </HeaderLink>
+        {sections.map((section) => (
+          <HeaderLink key={section.id} section={section} />
         ))}
       </ul>
     </nav>
     <ButtonBox>
-      <GoButton>register</GoButton>
-      <GoButton>login</GoButton>
+      <HeaderButton>register</HeaderButton>
+      <HeaderButton>login</HeaderButton>
     </ButtonBox>
   </Container>
 );
+
+HeaderSection.propTypes = {
+  sections: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
+};
 
 export default HeaderSection;
